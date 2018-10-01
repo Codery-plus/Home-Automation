@@ -72,7 +72,7 @@
 					//if it is on or off
 					if(this.checked)
 						{
-						alert("u put device id:"+checkboxid+" on");
+						//alert("u put device id:"+checkboxid+" on");
 						//Code to create new AXAJ req to send data to php
 						var myhttp = new XMLHttpRequest();
 						var url = "rec.php";
@@ -84,15 +84,24 @@
 					
 						myhttp.onreadystatechange=function(){
 						if(myhttp.readyState==4 && myhttp.status==200){
-							alert(myhttp.responseText);
+							//alert(myhttp.responseText);
 							}
 						}
-					
 						myhttp.send(params);
+						//
+						var xh = new XMLHttpRequest();
+						xh.onreadystatechange = function() {
+							if (this.readyState == 4 && this.status == 200) {
+							  	//alert("done");
+							}
+						};
+						xh.open("GET", "http://188.166.206.43/14d44711dc344804a0e7e7c93c085a1b/update/D13?value=1", true);
+						xh.send();
+						
 						}
 					else
 						{
-						alert("u put device id:"+checkboxid+" off");
+						//alert("u put device id:"+checkboxid+" off");
 						//Code to create new AXAJ req to send data to php
 						var myhttp = new XMLHttpRequest();
 						var url = "rec.php";
@@ -104,11 +113,20 @@
 					
 						myhttp.onreadystatechange=function(){
 						if(myhttp.readyState==4 && myhttp.status==200){
-							alert(myhttp.responseText);
+							//alert(myhttp.responseText);
 							}
 						}
-					
 						myhttp.send(params);
+						
+						var xh = new XMLHttpRequest();
+						xh.onreadystatechange = function() {
+							if (this.readyState == 4 && this.status == 200) {
+							  	//alert("done");
+							}
+						};
+						xh.open("GET", "http://188.166.206.43/14d44711dc344804a0e7e7c93c085a1b/update/D13?value=0", true);
+						xh.send();
+						
 						}
 					}
 				}
