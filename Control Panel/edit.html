@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit this shit</title>
+        
+       
+        
+        <style>
+            li{cursor: pointer}
+        </style>
+        
+    </head>
+    <body>
+       
+        <input type="text" id="txt">
+       <button onclick="edit()">Edit</button>
+       
+        
+        <ul id="list">
+            <li>Text1</li> 
+            <li>Text2</li>
+        </ul>
+        
+        <script>
+            
+            var inputText = document.getElementById("txt"),
+                 items = document.querySelectorAll("#list li"),
+                 tab = [], index;
+        
+             
+             for(var i = 0; i < items.length; i++){
+                 tab.push(items[i].innerHTML);
+             }
+             
+          
+             for(var i = 0; i < items.length; i++){
+                 
+                 items[i].onclick = function(){
+                     index = tab.indexOf(this.innerHTML);
+                     console.log(this.innerHTML + " INDEX = " + index);
+                     inputText.value = this.innerHTML;
+                 };
+                 
+             }
+            
+            function refreshArray()
+            {
+                
+                tab.length = 0;
+                items = document.querySelectorAll("#list li");
+             
+                for(var i = 0; i < items.length; i++){
+                 tab.push(items[i].innerHTML);
+               }
+            }
+     
+             
+             function edit(){
+                
+                items[index].innerHTML = inputText.value;
+                refreshArray();
+              }
+              
+         
+        </script>
+        
+    </body>
+</html
