@@ -1,0 +1,32 @@
+.input {
+width:50%;
+text-align:left;
+}
+
+.texte {
+font-family:Helvetica;
+text-align:left;
+width:25%;
+}
+
+input[type=email], input[type=password]{
+font-family:Helvetica;
+width:93%;
+padding:10px 10px;
+border:none;
+margin:8px 0 4px 0;
+background-color:#F2F2F2;
+color:black;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+}
+
+.click {
+width:100%;
+padding: 10px 10px;
+margin: 5px 1px 5px 1px;
+border: none;
+color:white;
+opacity:0.9;
+}
