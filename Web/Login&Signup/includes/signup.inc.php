@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     
     $sql = "INSERT INTO userdata (user,pwd) VALUES ('$user','$hashed')";
      mysqli_query($conn, $sql);
-     header("Location: ../login.php");
+     header("Location: ../Web/Home/home.php");
      exit(); 
     }    
 else{

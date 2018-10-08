@@ -16,9 +16,9 @@ session_start();
 					<input type="password" name="passwd" placeholder="yourpassword" required><br><br>
 					<label><input type="checkbox" name="remember" style="margin:5px 5px 20px 5px">Remember Me</label>
 					<button class="click" style="background-color:#4CAF50;" type="submit" name="submit">Login</button>
-					<button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button>
+					<a href = "../Home/home.php"><button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button></a>
 					<p style="text-align:center;"><a href="https://www.google.com/search?q=i+forgot+my+password" target="_blank">Forgot password?</a><br>
-					Don't have an account? <a href="https://www.google.com/search?q=how+to+sign+up" target="_blank">Sign up</a></p>
+					Don't have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
 					
 			</form>
 	</body>

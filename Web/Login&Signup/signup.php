@@ -65,7 +65,7 @@ session_start();
 			<input type="password"  placeholder="Enter password again" name="passr" required>
 			
 			<button type="submit" name="submit">Sign Up</button><br>
-		        
+		    <a href = "../Home/home.php"><button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button></a>
 			        
 		
 		</form>

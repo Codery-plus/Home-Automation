@@ -25,7 +25,7 @@ if (isset($_POST['submit'])){
                 $_SESSION['u_id'] = $row['id'];
                 //$_SESSION['username'] = $row['user'];
                 //header("Location: ../login.php?login=success");
-                header("Location: ../ControlPanel/controlpanel.php");
+                header("Location: ../../Control/ControlPanel/controlpanel.php");
                 exit();
             }
         }
