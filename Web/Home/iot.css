@@ -9,7 +9,7 @@
 	font-family: 'DejaVu Sans Condensed Bold', sans-serif;
 	font-weight: bold;
 	}
-	
+
 .div_2
 	{
 	background-color:#FFFFFF;
@@ -27,7 +27,7 @@
 	font-size:32px;
 	padding-bottom:40px;
 	}
-	
+
 .head_2
 	{
 	text-align:center;
@@ -47,7 +47,7 @@
 	border:1px solid grey;
 	display: table;
 	}
-	
+
 .row::after
 	{
 	box-sizing: border-box;
@@ -57,7 +57,7 @@
 	padding-top:40px;
 	color:white;
 	}
-	
+
 #textbelow
 	{
 	color:#303030;
@@ -71,8 +71,12 @@
 	width:25%;
 	padding:5px;
 	}
-	
-@media screen and (max-width: 900px)
+
+@media only screen and (min-width: 0px) and (max-width: 600px)
 	{
 	.col{width:100%;}
+	}
+@media only screen and (min-width: 600px) and (max-width: 900px)
+	{
+	.col{width:50%;}
 	}
