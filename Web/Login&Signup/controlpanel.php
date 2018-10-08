@@ -1,13 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['u_id'])){
-	//header("Location: ../ControlPanel/controlpanel.php");
-	include_once '../includes/ControlPanel/controlpanel.php';
-}else{
-	header("Location: ../login.php");
-}
-?>
-<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html>
 	<head>
 	<link rel="stylesheet" href="controlpanel.css">
@@ -57,12 +51,12 @@ function myLoop () {           //  create a loop function
 	   			{
 	   			temp="off";
 	   			}
-		   	var li=document.createElement('li');
+		   	var li=document.createElement(\'li\');
 			li.innerHTML=arr[arra];
 			arra++;
-			var label=document.createElement('label');
-			label.className='switch';
-			var input=document.createElement('input');
+			var label=document.createElement(\'label\');
+			label.className=\'switch\';
+			var input=document.createElement(\'input\');
 			input.type="checkbox";
 			input.id=String(a);
 			a=a+1;
@@ -70,8 +64,8 @@ function myLoop () {           //  create a loop function
 				{
 				input.checked=true;
 				}
-			var span=document.createElement('span');
-			span.className='slider round';
+			var span=document.createElement(\'span\');
+			span.className=\'slider round\';
 			label.appendChild(input);
 			label.appendChild(span);
 			ul.appendChild(li);
@@ -99,15 +93,15 @@ setTimeout(func,1000)
 
 function func(){
 
-var outerid=document.getElementById('here');
-var innerid=outerid.getElementsByTagName('label');	
+var outerid=document.getElementById(\'here\');
+var innerid=outerid.getElementsByTagName(\'label\');	
 var pinid;
 
 for(var i=0;i<innerid.length;i++)
 	{
 	//alert(i);
 	
-	if(innerid[i].firstChild.type=='checkbox')
+	if(innerid[i].firstChild.type==\'checkbox\')
 		{
 		innerid[i].firstChild.onclick=function()
 			{
@@ -131,7 +125,7 @@ for(var i=0;i<innerid.length;i++)
 				//Code to create new AXAJ req to send data to php
 				var myhttp = new XMLHttpRequest();
 				var url = "rec.php";
-				var params='id='+this.id+'&status=on';
+				var params=\'id=\'+this.id+\'&status=on\';
 				myhttp.open("POST",url,true);
 			
 				myhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -160,7 +154,7 @@ for(var i=0;i<innerid.length;i++)
 				//Code to create new AXAJ req to send data to php
 				var myhttp = new XMLHttpRequest();
 				var url = "rec.php";
-				var params='id='+this.id+'&status=off';
+				var params=\'id=\'+this.id+\'&status=off\';
 				myhttp.open("POST",url,true);
 			
 				myhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -188,148 +182,13 @@ for(var i=0;i<innerid.length;i++)
 	}
 }
 
-	/*
-	for(i=13;i>=10;i--)
-		{
-		var oReq = new XMLHttpRequest();
-		oReq.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			  	alert(i+this.responseText);
-			}
-		};
-        oReq.open("GET", "http://188.166.206.43/14d44711dc344804a0e7e7c93c085a1b/get/D"+i, true);
-    	oReq.send();
-		}
 	
-	
-	function reqListener () {
-      console.log(this.responseText);
-    }
-
-    var oReq = new XMLHttpRequest(); //New request object
-    oReq.onload = function() {
-    	//response from the server is reseved and saved in this.responseText
-        var txt=this.responseText;
-        
-        var devices=JSON.parse(txt).devices;
-		
-		var ul=document.getElementById("here");
-		for(i=0;i<devices.length;i++)
-			{
-			var li=document.createElement('li');
-			li.innerHTML=devices[i].name;
-		
-			var label=document.createElement('label');
-			label.className='switch';
-			var input=document.createElement('input');
-			input.type="checkbox";
-			input.id=devices[i].id;
-			if(devices[i].status=='on')
-				{
-				input.checked=true;
-				}
-			var span=document.createElement('span');
-			span.className='slider round';
-			label.appendChild(input);
-			label.appendChild(span);
-			ul.appendChild(li);
-			ul.appendChild(label);
-			}
-		
-		
-		//This is the code to listen to the checkbox and take action.
-        var outerid=document.getElementById('here');
-		var innerid=outerid.getElementsByTagName('label');	
-		var pinid;
-		
-		for(var i=0;i<innerid.length;i++)
-			{
-			if(innerid[i].firstChild.type=='checkbox')
-				{
-				innerid[i].firstChild.onclick=function()
-					{
-					var checkboxid=this.id;
-					if(checkboxid=="0")
-						{
-						pinid="D13";
-						}
-					else
-						{
-						pinid="D12";
-						}
-					
-					//if it is on or off
-					if(this.checked)
-						{
-						//alert("u put device id:"+checkboxid+" on");
-						//Code to create new AXAJ req to send data to php
-						var myhttp = new XMLHttpRequest();
-						var url = "rec.php";
-						var params='id='+this.id+'&status=on';
-						myhttp.open("POST",url,true);
-					
-						myhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-						//myhttp.setRequestHeader("Content-Length",params.length);
-					
-						myhttp.onreadystatechange=function(){
-						if(myhttp.readyState==4 && myhttp.status==200){
-							//alert(myhttp.responseText);
-							}
-						}
-						myhttp.send(params);
-						//
-						var xh = new XMLHttpRequest();
-						xh.onreadystatechange = function() {
-							if (this.readyState == 4 && this.status == 200) {
-							  	//alert("done");
-							}
-						};
-						xh.open("GET", "http://188.166.206.43/14d44711dc344804a0e7e7c93c085a1b/update/"+pinid+"?value=1", true);
-						xh.send();
-						
-						}
-					else
-						{
-						//alert("u put device id:"+checkboxid+" off");
-						//Code to create new AXAJ req to send data to php
-						var myhttp = new XMLHttpRequest();
-						var url = "rec.php";
-						var params='id='+this.id+'&status=off';
-						myhttp.open("POST",url,true);
-					
-						myhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-						//myhttp.setRequestHeader("Content-Length",params.length);
-					
-						myhttp.onreadystatechange=function(){
-						if(myhttp.readyState==4 && myhttp.status==200){
-							//alert(myhttp.responseText);
-							}
-						}
-						myhttp.send(params);
-						
-						var xh = new XMLHttpRequest();
-						xh.onreadystatechange = function() {
-							if (this.readyState == 4 && this.status == 200) {
-							  	//alert("done");
-							}
-						};
-						xh.open("GET", "http://188.166.206.43/14d44711dc344804a0e7e7c93c085a1b/update/"+pinid+"?value=0", true);
-						xh.send();
-						
-						}
-					}
-				}
-			}
-        
-    };
-    oReq.open("get", "test2.php", true);
-    //                               ^ Don't block the rest of the execution.
-    //                                 Don't wait until the request finishes to 
-    //                                 continue.
-    oReq.send();
-
-*/
 	
 	</script>
 	
 </html>
+';
+}else{
+header("Location: ../login.php");
+}
+?>
