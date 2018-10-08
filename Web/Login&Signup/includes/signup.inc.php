@@ -1,5 +1,5 @@
 <?php
- 
+ session_start();
 if(isset($_POST['submit'])){
    
    
@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     
     $sql = "INSERT INTO userdata (user,pwd) VALUES ('$user','$hashed')";
      mysqli_query($conn, $sql);
-     header("Location: ../signup.php?signup-success");
+     header("Location: ../login.php");
      exit(); 
     }    
 else{
