@@ -1,7 +1,8 @@
 <?php
 session_start();
-?>
-<!DOCTYPE html>
+
+if(!isset($_SESSION['u_id'])){
+echo'<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="login.css">
@@ -18,8 +19,14 @@ session_start();
 					<button class="click" style="background-color:#4CAF50;" type="submit" name="submit">Login</button>
 					<a href = "../Home/home.php"><button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button></a>
 					<p style="text-align:center;"><a href="https://www.google.com/search?q=i+forgot+my+password" target="_blank">Forgot password?</a><br>
-					Don't have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
+					Don\'t have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
 					
 			</form>
 	</body>
-</html>
+</html>';
+}
+else{
+	header("Location: ../Control/ControlPanel/controlpanel.php");
+	exit();
+}
+?>

@@ -1,3 +1,8 @@
+@font-face{
+  font-family:'Source Sans Pro Light';
+  src: url('http://localhost/hometest/Web/Fonts/SourceSansPro-Light.otf');
+}
+
 .vertical-menu {
     max-width: 200px;
     float:left;
@@ -10,6 +15,7 @@
     display: block;
     padding: 12px;
     text-decoration: none;
+    font-family:'Helvetica';
 }
 
 .vertical-menu a:hover {
@@ -22,13 +28,14 @@
 }
 
 .main{
-width:500px;
+width:500px;  
 height:500px;
 float:left;
 margin:10px;
 display:block;
 background-color:#eee;
 padding-left:40px;
+font-family:'Source Sans Pro Light';
 }
 
 .head{

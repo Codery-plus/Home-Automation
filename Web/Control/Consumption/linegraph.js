@@ -1,24 +1,24 @@
 $(document).ready(function(){
   $.ajax({
-    url : "http://localhost/graph.php",
+    url : "http://localhost/hometest/Web/Control/Consumption/graph.php",
     type : "GET",
     success : function(data){
       console.log(data);
 
       var month = [];
       var power = [];
-      
+
 
       for(var i in data) {
         month.push(data[i].month);
         power.push(data[i].power);
-        
+
       }
 
       var chartdata = {
         labels: month,
         datasets: [
-          
+
           {
             label: "power",
             fill: false,
@@ -31,9 +31,9 @@ $(document).ready(function(){
           }
         ]
       };
-	
+
 		var opt={animation:false};
-		
+
       var ctx = $("#mycanvas");
 
       var LineGraph = new Chart(ctx, {

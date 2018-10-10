@@ -1,7 +1,8 @@
 <?php
 session_start();
-?>
-<!DOCTYPE html>
+
+if(!isset($_SESSION['u_id'])){
+echo'<!DOCTYPE html>
 <html>
 	<head>
 	<style>
@@ -72,3 +73,10 @@ session_start();
 	</div>	
 	</body>
 </html>
+';
+	}
+else{
+	header("Location: ../Control/ControlPanel/controlpanel.php");
+	exit();
+}
+?>

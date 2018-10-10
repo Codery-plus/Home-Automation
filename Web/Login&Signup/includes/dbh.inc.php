@@ -2,7 +2,7 @@
 
 $dbservername = "localhost";
 $dbusername = "root";
-$dbpasswordname = "";
+$dbpasswordname = "root";
 $dbname = "homeauto";
 
 $conn = mysqli_connect($dbservername,$dbusername,$dbpasswordname,$dbname);

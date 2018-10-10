@@ -2,7 +2,7 @@
 if(isset($_GET['watt']))
 	{
 	$id=$_GET['watt'];
-	
+
 	//echo $status;
 	$servername = "localhost";
 	$username = "root";
@@ -25,7 +25,7 @@ if(isset($_GET['watt']))
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
-	
+
 	if (mysqli_query($conn, $sql1)) {
 		echo "Data updated Successfully";
 	} else {
