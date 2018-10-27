@@ -11,6 +11,13 @@ header("Location:../Control/ControlPanel/controlpanel.php");
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./iot.css">
+<<<<<<< HEAD
+=======
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -104,7 +111,11 @@ header("Location:../Control/ControlPanel/controlpanel.php");
 			      <ul class="nav navbar-nav navbar-right">
 				<li><a href="../Login&Signup/signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="../Login&Signup/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
 			      </ul>
 			    </div>
 		</div>
@@ -139,3 +150,6 @@ header("Location:../Control/ControlPanel/controlpanel.php");
 			</div>
 	</body>
 </html>
+
+
+

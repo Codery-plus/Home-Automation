@@ -34,7 +34,15 @@ if(isset($_GET['watt']))
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 
+<<<<<<< HEAD
 
+=======
+	if (mysqli_query($conn, $sql1)) {
+		echo "Data updated Successfully";
+	} else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
 
 	mysqli_close($conn);
 	}

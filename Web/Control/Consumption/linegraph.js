@@ -1,6 +1,10 @@
 $(document).ready(function(){
   $.ajax({
+<<<<<<< HEAD
     url : "http://localhost/Home-Automation/Web/Control/Consumption/graph.php",
+=======
+    url : "http://localhost/hometest/Web/Control/Consumption/graph.php",
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
     type : "GET",
     success : function(data){
       console.log(data);

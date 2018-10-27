@@ -1,11 +1,16 @@
 <?php
 session_start();
 
+<<<<<<< HEAD
 if(isset($_SESSION['u_id'])){
 	header("Location: ../Control/ControlPanel/controlpanel.php");
 	exit();}
 ?>
 <!DOCTYPE html>
+=======
+if(!isset($_SESSION['u_id'])){
+echo'<!DOCTYPE html>
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="login.css">
@@ -22,9 +27,23 @@ if(isset($_SESSION['u_id'])){
 					<button class="click" style="background-color:#4CAF50;" type="submit" name="submit">Login</button>
 					<a href = "../Home/home.php"><button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button></a>
 					<p style="text-align:center;"><a href="https://www.google.com/search?q=i+forgot+my+password" target="_blank">Forgot password?</a><br>
+<<<<<<< HEAD
 					Don't have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
 
 			</form>
 	</body>
 </html>;
 }
+=======
+					Don\'t have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
+					
+			</form>
+	</body>
+</html>';
+}
+else{
+	header("Location: ../Control/ControlPanel/controlpanel.php");
+	exit();
+}
+?>
+>>>>>>> fbcd7fba76735f369e732728aa69b390a08f192f
