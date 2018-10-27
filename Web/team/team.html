@@ -1,0 +1,219 @@
+<?php
+session_start();
+if(isset($_SESSION['u_id'])){
+header("Location:../Control/ControlPanel/controlpanel.php");
+}
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home Indoor Voice</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+        html {
+          box-sizing: border-box;
+        }
+        .mydiv{
+            padding:20px;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        .column {
+          float: left;
+          width: 33.3%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        }
+
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+          padding: 0 16px;
+        }
+
+        .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        .title {
+          color: grey;
+        }
+
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          max-width: 100%;
+          min-width: 30%;
+        }
+
+        .button:hover {
+          background-color: #555;
+        }
+        </style>
+
+  	<script>
+  	var xmlhttp;
+	function loadXMLDoc(url,func)
+	{
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=func;
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+	}
+
+	function firstfun()
+	{
+	loadXMLDoc("./txt/first.txt",function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("textbelow").innerHTML=xmlhttp.responseText;
+		}
+	  });
+	}
+
+	function secondfun()
+	{
+	loadXMLDoc("./txt/second.txt",function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("textbelow").innerHTML=xmlhttp.responseText;
+		}
+	  });
+	}
+	function thirdfun()
+	{
+	loadXMLDoc("./txt/third.txt",function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("textbelow").innerHTML=xmlhttp.responseText;
+		}
+	  });
+	}
+	function fourthfun()
+	{
+	loadXMLDoc("./txt/fourth.txt",function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("textbelow").innerHTML=xmlhttp.responseText;
+		}
+	  });
+	}
+
+
+
+  	</script>
+	</head>
+	<body>
+		<div>
+		<!--
+		<img src="/home/dbit/Downloads/dbit-banner-1.png" max-width="556px" height="auto" alt="Home Indoor Voice">
+		-->
+		</div>
+		<!--Menu Bar bootstrapped-->
+		<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    			<div class="navbar-header">
+     				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+    				<a class="navbar-brand" href="#">Home Indoor Voice</a>
+    			</div>
+   			 <div class="collapse navbar-collapse" id="myNavbar">
+      				<ul class="nav navbar-nav">
+				<li><a href="../Home/home.php">Home</a></li>
+				<li><a href="./Build/build.html">Build it yourself</a></li>
+				<li class="active"><a href="#">About Us</a></li>
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">
+				<li><a href="../Login&Signup/signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a href="../Login&Signup/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+			      </ul>
+			    </div>
+		</div>
+		</nav>
+
+            <div class="mydiv">
+                  <div class="row">
+                  <div class="column">
+                    <div class="card">
+                      <img src="calden1.png" alt="Jane" style="width:100%;">
+                      <div class="container">
+                        <h2>Calden Rodrigues</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>caldenrodrigues1202@gmail.com    </p>
+                        <p><a href="https://github.com/caldenrodrigues"><button class="button" >View</button></a></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="card">
+                      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+                      <div class="container">
+                        <h2>Noah Jacob</h2>
+                        <p class="title">Art Director</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><a href="https://github.com/noahjacob"><button class="button" >View</button></a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="card">
+                      <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+                      <div class="container">
+                        <h2>Pratik Nerurkar</h2>
+                        <p class="title">Designer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><a href="https://github.com/PlayPratz"><button class="button" >View</button></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+	</body>
+</html>

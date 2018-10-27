@@ -2,7 +2,7 @@
 if(isset($_GET['watt']))
 	{
 	$id=$_GET['watt'];
-	
+
 	//echo $status;
 	$servername = "localhost";
 	$username = "root";
@@ -18,19 +18,23 @@ if(isset($_GET['watt']))
 
 	//$sql = "Update devices set status=\"".$status."\" where id=".$id;
 	$sql = "Insert into device1 values(\"".date("h:i:sa")."\",".$id.");";
+	//$sql = "INSERT into device1 values(\"12:00\",5)";
 	$sql1 ="DELETE FROM device1 LIMIT 1";
 
 	if (mysqli_query($conn, $sql)) {
 		echo "Data updated Successfully";
+
+		if (mysqli_query($conn, $sql1)) {
+			echo "Data updated Successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
-	
-	if (mysqli_query($conn, $sql1)) {
-		echo "Data updated Successfully";
-	} else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-	}
+
+
 
 	mysqli_close($conn);
 	}
