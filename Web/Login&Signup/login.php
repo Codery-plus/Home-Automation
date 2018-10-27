@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if(isset($_SESSION['u_id'])){
+	header("Location: ../Control/ControlPanel/controlpanel.php");
+	exit();}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +23,8 @@ session_start();
 					<a href = "../Home/home.php"><button class="click" style="background-color:#f44336;" type="button" name="cancel">Cancel</button></a>
 					<p style="text-align:center;"><a href="https://www.google.com/search?q=i+forgot+my+password" target="_blank">Forgot password?</a><br>
 					Don't have an account? <a href="../Login&Signup/signup.php" >Sign up</a></p>
-					
+
 			</form>
 	</body>
-</html>
+</html>;
+}

@@ -1,13 +1,12 @@
 <?php
-session_start();
-if(isset($_SESSION['u_id'])){
-echo'<!DOCTYPE html>
+include 'rec_js.php';
+?>
 <html>
 	<head>
 	<meta http-equiv="refresh" content="6" />
 	<link rel="stylesheet" href="consumption.css">
 	<?php
-	include \'rec_js.php\';
+
 	?>
 	</head>
 	<body>
@@ -19,17 +18,12 @@ echo'<!DOCTYPE html>
 	<div class="main" id="temp">
 	<p class="head">Device Consumption:</p>
 		<canvas id = "mycanvas"></canvas>
-	
+
 	</div>
 	<script type="text/javascript" src="Chart.min.js"></script>
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="linegraph.js"></script>
-	
+
 	</body>
-	
+
 </html>
-';
-}else{
-	header("Location: ../Web/Home/home.html");
-	exit();
-}

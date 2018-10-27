@@ -1,22 +1,27 @@
+@font-face{
+	font-family: 'ADAM.CG PRO';
+	src: url('../Fonts/ADAM.CGPRO.otf');
+}
+
 .div_1
 	{
-	background-color:#32bb62;
+	background-color: #101010;
 	/*background-image: linear-gradient(90deg, #19b34f, #4cc476); /*32bb62*/
 	width:99%;
 	margin:auto;
 	height:auto;
 	padding:100px;
-	font-family: 'DejaVu Sans Condensed Bold', sans-serif;
+	font-family: 'ADAM.CG PRO';
 	font-weight: bold;
 	}
 
 .div_2
 	{
-	background-color:#FFFFFF;
+	background-color:#FEFEFE;
 	width:auto;
 	height:auto;
 	padding:100px;
-	font-family: 'DejaVu Sans Condensed Bold', sans-serif;
+	font-family: 'ADAM.CG PRO';
 	font-weight: bold;
 	}
 
@@ -43,8 +48,8 @@
 	width:auto;
 	max-width:200px;
 	height:200px;
-	padding: 4px;
-	border:1px solid grey;
+	padding: 2px;
+	border:2px solid #FFBF00;
 	display: table;
 	}
 
